@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.toolbar {
+    height: 50px;
+    padding: 10px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tools button {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.tools button.active {
+    background: #007bff;
+    color: white;
+}
+
+.eraser-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.eraser-sizes {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#drawing-board {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    cursor: crosshair;
+}
+
+.cursor-canvas {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.users-list {
+    position: fixed;
+    right: 10px;
+    top: 70px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .toolbar {
+        height: 60px;
+    }
+    
+    .tools button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+} 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數位白板共享簽名系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="toolbar">
+        <div class="user-info">
+            <span id="online-count">在線人數: 0</span>
+            <span id="user-id"></span>
+        </div>
+        <div class="tools">
+            <button id="pen-tool" class="active">筆</button>
+            <div class="eraser-tools">
+                <button id="eraser-tool">橡皮擦</button>
+                <div class="eraser-sizes">
+                    <label>
+                        <input type="radio" name="eraser-size" value="10" checked>
+                        小
+                    </label>
+                    <label>
+                        <input type="radio" name="eraser-size" value="20">
+                        中
+                    </label>
+                    <label>
+                        <input type="radio" name="eraser-size" value="30">
+                        大
+                    </label>
+                </div>
+            </div>
+            <button id="clear-all">全部清除</button>
+        </div>
+    </div>
+    
+    <canvas id="drawing-board"></canvas>
+    <canvas id="cursor-canvas" class="cursor-canvas"></canvas>
+    
+    <div id="users-list" class="users-list"></div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/DrawingBoard.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
